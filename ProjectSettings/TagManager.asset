@@ -14,6 +14,7 @@ TagManager:
   - CanDeliverObject
   - YesBtn
   - NoBtn
+  - Ghost
   layers:
   - Default
   - TransparentFX

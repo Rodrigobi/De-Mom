@@ -5,9 +5,7 @@ public class CharacterController : MonoBehaviour
     public float rotationSpeed = 5f;
     public float coneAngle = 45f;
     public float coneDistance = 5f;
-    public float suctionForce = 10f;
     public LayerMask enemyLayer;
-    public int damageAmount = 10;
 
     private Transform playerTransform;
     private Animator animator;
@@ -63,33 +61,11 @@ public class CharacterController : MonoBehaviour
 
                 if (angle < coneAngle * 0.5f)
                 {
-                    DamageEnemy(enemy.gameObject);
-                    ApplySuctionForce(enemy.gameObject);
+                    // Apply damage or perform any desired action here
                 }
             }
 
             nextDamageTime = Time.time + damageDelay;
-        }
-    }
-
-    private void DamageEnemy(GameObject enemy)
-    {
-        Enemy enemyScript = enemy.GetComponent<Enemy>();
-
-        if (enemyScript != null)
-        {
-            enemyScript.TakeDamage(damageAmount);
-        }
-    }
-
-    private void ApplySuctionForce(GameObject enemy)
-    {
-        Rigidbody2D enemyRigidbody = enemy.GetComponent<Rigidbody2D>();
-
-        if (enemyRigidbody != null)
-        {
-            Vector2 directionToPlayer = playerTransform.position - enemy.transform.position;
-            enemyRigidbody.AddForce(directionToPlayer.normalized * suctionForce, ForceMode2D.Impulse);
         }
     }
 
