@@ -158,7 +158,7 @@ MonoBehaviour:
   maxX: 100
   minY: -25
   maxY: 25
-  spawnTimerMax: 1
+  spawnTimerMax: 3
 --- !u!4 &93454045
 Transform:
   m_ObjectHideFlags: 0
