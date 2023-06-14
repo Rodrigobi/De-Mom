@@ -1,17 +1,14 @@
-using UnityEngine;
+﻿using UnityEngine;
 using CodeMonkey.HealthSystemCM;
 
-public class Enemy : MonoBehaviour
+public class Ghost : MonoBehaviour, IGetHealthSystem 
 {
     private HealthSystem healthSystem;
-    
-    public float moveSpeed = 2f;
-
+    public float moveSpeed = 10f;
     private Vector3 targetPosition;
     private Animator animator;
 
-    private void Awake() 
-    {
+    private void Awake() {
         healthSystem = new HealthSystem(100);
         healthSystem.OnDead += HealthSystem_OnDead;
     }
@@ -45,7 +42,7 @@ public class Enemy : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
         // Check if reached the target position
-        if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
+        if (Vector3.Distance(transform.position, targetPosition) < 0.5f)
         {
             // Get a new random target position
             targetPosition = GetRandomPosition();
@@ -54,8 +51,8 @@ public class Enemy : MonoBehaviour
 
     private Vector3 GetRandomPosition()
     {
-        float x = Random.Range(-10f, 10f);
-        float y = Random.Range(-5f, 5f);
+        float x = Random.Range(-150f, 150f); // Increase the range to -50 and 50
+        float y = Random.Range(-75f, 75f); // Increase the range to -25 and 25
         return new Vector3(x, y, 0f);
     }
 
@@ -64,13 +61,15 @@ public class Enemy : MonoBehaviour
         return Vector3.Distance(transform.position, targetPosition) > 0.1f;
     }
 
-    public void Damage() 
-    {
-        healthSystem.Damage(60);
+    public void Damage() {
+        healthSystem.Damage(20);
     }
 
-    private void HealthSystem_OnDead(object sender, System.EventArgs e) 
-    {
+    private void HealthSystem_OnDead(object sender, System.EventArgs e) {
         Destroy(gameObject);
+    }
+
+    public HealthSystem GetHealthSystem() {
+        return healthSystem;
     }
 }
