@@ -12,13 +12,13 @@ public class ItemPool : MonoBehaviour, IDropHandler
             DragHandler dragHandler = eventData.pointerDrag.GetComponent<DragHandler>();
             if (dragHandler != null)
             {
-                dragHandler.transform.SetParent(transform);
-                dragHandler.transform.position = transform.position;
-                dragHandler.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
-
                 DropSlot dropSlot = GetComponentInParent<DropSlot>();
-                if (dropSlot != null)
+                if (dropSlot != null && dropSlot.CanAcceptItems())
                 {
+                    dragHandler.transform.SetParent(transform);
+                    dragHandler.transform.position = transform.position;
+                    dragHandler.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+
                     dropSlot.ItemDropped();
                 }
             }

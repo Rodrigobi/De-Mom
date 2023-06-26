@@ -1,16 +1,20 @@
 ﻿using UnityEngine;
 using CodeMonkey.HealthSystemCM;
 
+
 public class Ghost : MonoBehaviour, IGetHealthSystem 
 {
     private HealthSystem healthSystem;
     public float moveSpeed = 10f;
     private Vector3 targetPosition;
     private Animator animator;
-
-    private void Awake() {
+    
+    private void Awake()
+    {
         healthSystem = new HealthSystem(100);
         healthSystem.OnDead += HealthSystem_OnDead;
+
+        
     }
     
     private void Start()
@@ -66,6 +70,8 @@ public class Ghost : MonoBehaviour, IGetHealthSystem
     }
 
     private void HealthSystem_OnDead(object sender, System.EventArgs e) {
+        
+        
         Destroy(gameObject);
     }
 

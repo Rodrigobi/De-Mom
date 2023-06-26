@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8467583624508002152}
   - component: {fileID: 639439629259937443}
   - component: {fileID: 8346701776427191930}
-  - component: {fileID: 8346701776427191931}
+  - component: {fileID: 3993029507640989972}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Ghost
@@ -99,7 +99,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8346701776427191931
+--- !u!114 &3993029507640989972
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8346701774614475229}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd608ae08c9aad44aace9312b20716a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e477b6281fac014ea17e9626141d587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 40
@@ -321,7 +321,7 @@ PrefabInstance:
     - target: {fileID: 6848739074368699838, guid: f1419c2a3f5ecf44e824039f908fea60,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.3
+      value: 3.13
       objectReference: {fileID: 0}
     - target: {fileID: 6848739074368699838, guid: f1419c2a3f5ecf44e824039f908fea60,
         type: 3}

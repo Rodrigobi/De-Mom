@@ -15,6 +15,7 @@ TagManager:
   - YesBtn
   - NoBtn
   - Ghost
+  - ItemPool
   layers:
   - Default
   - TransparentFX
