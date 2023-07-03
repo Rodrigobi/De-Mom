@@ -19,7 +19,7 @@ public class ItemPool : MonoBehaviour, IDropHandler
                     dragHandler.transform.position = transform.position;
                     dragHandler.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
 
-                    dropSlot.ItemDropped();
+                    dropSlot.GetComponent<DropSlot>().ItemDropped(); // Call the ItemDropped method in the DropSlot script
                 }
             }
         }

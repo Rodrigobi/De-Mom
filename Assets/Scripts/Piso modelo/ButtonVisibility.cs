@@ -1,11 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ButtonVisibility : MonoBehaviour
 {
-    public List<string> npcTags = new List<string> { "NPC1", "NPC2", "NPC3", "NPC4", "NPC5", "NPC6", "NormalNPC" };
+    public List<string> npcTags = new List<string> { "NPC1", "NPC2", "NPC3", "NPC4", "NPC5", "NPC6" };
     public float detectionRadius = 3f;
     public Button interactionButton;
 
@@ -74,4 +73,3 @@ public class ButtonVisibility : MonoBehaviour
         }
     }
 }
-
